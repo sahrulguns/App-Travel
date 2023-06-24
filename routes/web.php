@@ -1,11 +1,15 @@
 <?php
 
+use App\Models\TravelPackage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\SuccessCheckoutController;
+use App\Http\Controllers\Admin\TravelPackageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +31,10 @@ Route::get('/success-checkout', [SuccessCheckoutController::class, 'index']);
 
 // admin
 Route::prefix('admin')
-    ->namespace('admin')
+    ->middleware('auth', 'admin')
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index']);
+        Route::resource('travel-package', TravelPackageController::class);
     });
+
+Auth::routes();

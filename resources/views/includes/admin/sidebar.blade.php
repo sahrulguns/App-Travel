@@ -17,9 +17,13 @@
              <i class="fas fa-fw fa-tachometer-alt"></i>
              <span>Dashboard</span></a>
      </li>
-
-     <!-- Divider -->
      <hr class="sidebar-divider">
+     <li class="nav-item active">
+        <a class="nav-link" href="{{route('travel-package.index')}}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Travel Package</span></a>
+    </li>
+    <hr class="sidebar-divider">
 
     
  </ul>

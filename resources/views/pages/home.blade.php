@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Home')
-    
-@endsection
 @section('content')
 <header class="text-center">
      <h1>
